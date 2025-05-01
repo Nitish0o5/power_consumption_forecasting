@@ -1,0 +1,87 @@
+{
+    "house_id": 2,
+    "initial_meter_reading": 29567,
+    "initial_meter_reading_date": "2024-01-01",
+    "white_goods": {
+        "fridge": {
+            "used": true, 
+            "usage": "continuous"
+        },
+        "washing_machine": {
+            "used": true, 
+            "usage": "fixed", 
+            "timing": {
+                "start": "07:00:00", 
+                "end": "08:30:00"
+                }
+            },
+        "microwave": {
+            "used": true, 
+            "usage": "random"
+        },
+        "dishwasher": {
+            "used": true, 
+            "usage": "fixed", 
+            "timing": {
+                "start": "22:00:00", 
+                "end": "23:00:00"
+                }
+            }
+    },
+    "entertainment": {
+        "tv": {
+            "used": true, 
+            "usage": "fixed", 
+            "timing": {
+                "start": "15:00:00", 
+                "end": "23:00:00"
+                }
+            },
+        "wifi": {
+            "used": true, 
+            "usage": "continuous"
+        },
+        "laptop": {
+            "used": true, 
+            "usage": "fixed", 
+            "timing": {
+                "start": "09:00:00", 
+                "end": "17:00:00"
+                }
+            },
+        "chargers": {
+            "used": true, 
+            "usage": "random"
+        }
+    },
+    "lighting": {
+        "used": true, 
+        "usage": "fixed", 
+        "timing": {
+            "start": "17:00:00", 
+            "end": "23:59:59"
+            }
+        },
+    "ev_charges": {
+        "used": true,
+        "usage": "random"
+    },
+    "air_conditioners": {
+        "fans": {
+            "used": true, 
+            "usage": "fixed", 
+            "timing": {
+                "start": "07:00:00", 
+                "end": "23:00:00"
+                }
+            },
+        "ac": {
+            "used": true, 
+            "usage": "fixed", 
+            "timing": {
+                "start": "12:00:00", 
+                "end": "06:00:00"
+                }
+            }
+    }
+}

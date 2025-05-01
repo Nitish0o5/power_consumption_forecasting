@@ -1,0 +1,83 @@
+{
+    "house_id": 1,
+    "initial_meter_reading": 67547,
+    "initial_meter_reading_date": "2024-01-01",
+    "white_goods": {
+        "fridge": {
+            "used": true,
+            "usage": "continuous"
+        },
+        "washing_machine": {
+            "used": false,
+            "usage": "fixed",
+            "timing": {
+                "start": "08:00:00",
+                "end": "09:00:00"
+            }
+        },
+        "microwave": {
+            "used": true,
+            "usage": "random"
+        },
+        "dishwasher": {
+            "used": false
+        }
+    },
+    "entertainment": {
+        "tv": {
+            "used": true,
+            "usage": "fixed",
+            "timing":{
+                "start": "10:00:00",
+                "end": "21:00:00"
+            }
+        },
+        "wifi": {
+            "used": true,
+            "usage": "continuous"
+        },
+        "laptop":{  
+            "used": true,
+            "usage": "fixed",
+            "timing":{
+                "start": "10:00:00",
+                "end": "21:00:00"
+            }
+        },
+        "chargers": {
+            "used": true,
+            "usage": "random"
+        }
+    },
+    "lighting": {
+        "lighting": {
+            "used": true,
+            "usage": "fixed",
+            "timing": {
+            "start": "18:00:00",
+            "end": "23:00:00"
+        }
+    }
+    },
+    "ev_charges": {
+    },
+    "air_conditioners": {
+        "fans":{
+            "used": true,
+            "usage": "fixed",
+            "timing":{
+                "start": "06:00:00",
+                "end": "22:00:00"
+            }
+        },
+        "ac": {
+            "used": true,
+            "usage": "fixed",
+            "timing":{
+                "start": "22:00:00",
+                "end": "06:00:00"
+            }
+        }
+    }
+
+}
