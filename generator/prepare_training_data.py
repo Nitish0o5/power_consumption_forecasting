@@ -28,6 +28,6 @@ if __name__ == "__main__":
     file_path = "data/raw_data_20250501_17_52.csv"
     output_file = "data/training_data_raw_data_20250501_17_52.csv"
     selected_columns = [
-        "date_range","time","consumed_power", "white_goods","entertainment","air_conditioners","lighting","ev_charges" 
+        "house_id","date_range","time","consumed_power", "white_goods","entertainment","air_conditioners","lighting","ev_charges" 
     ]
     prepare_training_data(file_path, selected_columns, output_file)
