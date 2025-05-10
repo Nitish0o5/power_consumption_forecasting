@@ -1,0 +1,58 @@
+{
+    "seasons": {
+        "summer": {
+            "months": [3, 4, 5, 6],
+            "device_multipliers": {
+                "ac": 1.6,
+                "fans": 1.4,
+                "lighting": 0.9,
+                "fridge": 1.1
+            },
+            "time_patterns": {
+                "ac": {
+                    "peak_hours": ["13:00:00", "17:00:00"],
+                    "peak_multiplier": 1.9
+                }
+            }
+        },
+        "monsoon": {
+            "months": [7, 8, 9],
+            "device_multipliers": {
+                "ac": 0.8,
+                "fans": 1.2,
+                "lighting": 1.0,
+                "fridge": 1.1
+            },
+            "time_patterns": {
+                "fans": {
+                    "peak_hours": ["10:00:00", "16:00:00"],
+                    "peak_multiplier": 1.2
+                }
+            }
+        },
+        "winter": {
+            "months": [11, 12, 1, 2],
+            "device_multipliers": {
+                "ac": 0.2,
+                "fans": 0.3,
+                "lighting": 1.5,
+                "fridge": 1.0
+            },
+            "time_patterns": {
+                "lighting": {
+                    "peak_hours": ["17:30:00", "21:00:00"],
+                    "peak_multiplier": 1.6
+                }
+            }
+        },
+        "autumn": {
+            "months": [10],
+            "device_multipliers": {
+                "ac": 0.6,
+                "fans": 0.8,
+                "lighting": 1.2,
+                "fridge": 1.0
+            }
+        }
+    }
+}

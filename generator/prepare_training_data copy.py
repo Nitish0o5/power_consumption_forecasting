@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import LabelEncoder
 
 def add_cyclical_features(df, col, period):
     df[f'{col}_sin'] = np.sin(2 * np.pi * df[col] / period)
@@ -34,25 +34,14 @@ def prepare_training_data(file_path, columns_to_use, output_path):
         training_data = add_cyclical_features(training_data, 'minute', 60)
         training_data = add_cyclical_features(training_data, 'second', 60)
         
-        # One-hot encode date_range
-        print("One-hot encoding date_range...")
-        encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
-        encoded_date_range = encoder.fit_transform(training_data[['date_range']])
-        encoded_df = pd.DataFrame(
-            encoded_date_range, 
-            columns=encoder.get_feature_names_out(['date_range'])
-        )
-        
-        # Combine all features
-        print("Combining features...")
-        final_data = pd.concat([
-            encoded_df,
-            training_data.drop('date_range', axis=1)
-        ], axis=1)
+        # Label encode date_range
+        print("Label encoding date_range...")
+        label_encoder = LabelEncoder()
+        training_data['date_range'] = label_encoder.fit_transform(training_data['date_range'])
         
         # Save to CSV
         print(f"Saving processed data to {output_path}")
-        final_data.to_csv(output_path, index=False)
+        training_data.to_csv(output_path, index=False)
         print("Data preparation completed successfully!")
         
         return output_path
@@ -62,11 +51,11 @@ def prepare_training_data(file_path, columns_to_use, output_path):
         return None
 
 if __name__ == "__main__":
-    file_path = "data/raw_data_20250508_20_25.csv"
-    output_file = "data/training_data_raw_data_20250508_20_25.csv"
+    file_path = "data/raw_data_20250506_15_30.csv"
+    output_file = "data/training_data_raw_data_20250506_15_30_sample.csv"
     selected_columns = [
         "date_range", "time", "consumed_power", 
         "white_goods", "entertainment", "air_conditioners", 
-        "lighting", "ev_charges", "utility_appliances"
+        "lighting", "ev_charges"
     ]
     prepare_training_data(file_path, selected_columns, output_file)
