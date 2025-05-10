@@ -53,6 +53,5 @@ python-env-tools/**
 python_files/tests/*/.data/.coverage*
 python_files/tests/*/.data/*/.coverage*
 src/testTestingRootWkspc/coverageWorkspace/.coverage
-data/
-*.csv
+data/*.csv
 
