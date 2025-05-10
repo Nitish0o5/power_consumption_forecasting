@@ -4,72 +4,140 @@
     "initial_meter_reading_date": "2024-01-01",
     "white_goods": {
         "fridge": {
-            "used": true, 
+            "used": true,
             "usage": "continuous"
         },
         "washing_machine": {
-            "used": true, 
-            "usage": "fixed", 
+            "used": true,
+            "usage": "fixed",
             "timing": {
-                "start": "19:00:00", 
+                "start": "19:00:00",
                 "end": "20:00:00"
-                }
-            },
+            }
+        },
         "microwave": {
-            "used": true, 
+            "used": true,
             "usage": "random"
         },
-        "dishwasher": {"used": false}
+        "dishwasher": {
+            "used": false
+        }
     },
     "entertainment": {
         "tv": {
             "used": false
         },
         "wifi": {
-            "used": true, 
+            "used": true,
             "usage": "continuous"
         },
         "laptop": {
-            "used": true, 
-            "usage": "fixed", 
+            "used": true,
+            "usage": "fixed",
             "timing": {
-                "start": "20:00:00", 
+                "start": "20:00:00",
                 "end": "23:00:00"
-                }
-            },
+            }
+        },
         "chargers": {
-            "used": true, 
+            "used": true,
             "usage": "random"
         }
     },
     "lighting": {
-        "used": true, 
-        "usage": "fixed", 
-        "timing": {
-            "start": "19:00:00", 
-            "end": "23:30:00"
+        "living_room": {
+            "used": true,
+            "usage": "fixed",
+            "timing": {
+                "start": "19:00:00",
+                "end": "23:30:00"
             }
         },
+        "bedroom": {
+            "used": true,
+            "usage": "fixed",
+            "timing": {
+                "start": "20:00:00",
+                "end": "23:00:00"
+            }
+        },
+        "kitchen": {
+            "used": true,
+            "usage": "fixed",
+            "timing": {
+                "start": "07:00:00",
+                "end": "09:00:00",
+                "evening_start": "18:00:00",
+                "evening_end": "20:00:00"
+            }
+        },
+        "bathroom": {
+            "used": true,
+            "usage": "fixed",
+            "timing": {
+                "morning_start": "07:00:00",
+                "morning_end": "09:00:00",
+                "evening_start": "20:00:00",
+                "evening_end": "23:00:00"
+            }
+        },
+        "home_office": {
+            "used": true,
+            "usage": "fixed",
+            "timing": {
+                "start": "20:00:00",
+                "end": "23:00:00"
+            }
+        }
+    },
     "ev_charges": {
         "used": true,
         "usage": "random"
     },
     "air_conditioners": {
         "fans": {
-            "used": true, 
-            "usage": "fixed", 
+            "used": true,
+            "usage": "fixed",
             "timing": {
-                "start": "18:00:00", 
+                "start": "18:00:00",
                 "end": "06:00:00"
-                }
-            },
-        "ac": {
-            "used": true, 
-            "usage": "fixed", 
-            "timing": {
-                "start": "21:00:00", 
-                "end": "06:00:00"
-                }
             }
+        },
+        "ac": {
+            "used": true,
+            "usage": "fixed",
+            "timing": {
+                "start": "21:00:00",
+                "end": "06:00:00"
+            }
+        }
+    },
+    "utility_appliances": {
+        "water_heater": {
+            "used": true,
+            "usage": "random"
+        },
+        "motor": {
+            "used": true,
+            "usage": "fixed",
+            "timing": {
+                "start": "05:00:00",
+                "end": "06:00:00"
+            }
+        }
+    },
+    "month_variations": {
+        "january": 1.1,
+        "february": 1.0,
+        "march": 1.1,
+        "april": 1.3,
+        "may": 1.4,
+        "june": 1.3,
+        "july": 1.2,
+        "august": 1.1,
+        "september": 1.0,
+        "october": 0.9,
+        "november": 1.0,
+        "december": 1.2
     }
 }
