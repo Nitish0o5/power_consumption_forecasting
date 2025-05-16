@@ -3,6 +3,7 @@ import pickle
 import os
 from datetime import datetime
 
+
 class TimeFeatureEncoder:
     def __init__(self):
         self.time_format = '%H:%M:%S'
