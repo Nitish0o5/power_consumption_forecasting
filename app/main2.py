@@ -62,19 +62,24 @@ def get_date_range_label(date_obj):
     else:
         return f"{month}_3"
 
-# Pydantic model for natural language input
+
 class NLPPredictionInput(BaseModel):
     query: str
 
 app = FastAPI()
 
-# --- NLP Utility ---
 def extract_info_from_query(query: str):
     now = datetime.now()
 
     # Extract time
     time_match = re.search(r'\b(\d{1,2}:\d{2}(?::\d{2})?)\b', query)
-    time_str = time_match.group(1) if time_match else now.strftime("%H:%M:%S")
+    if time_match:
+        parts = time_match.group(1).split(':')
+        while len(parts) < 3:
+            parts.append('00')  # Add seconds or minutes if missing
+        time_str = ':'.join(parts)
+    else:
+        time_str = now.strftime("%H:%M:%S")
 
     # Extract date
     date_match = re.search(r'(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})', query)
@@ -85,6 +90,7 @@ def extract_info_from_query(query: str):
     consumed_power = float(power_match.group(1)) if power_match else 1.0  # fallback
 
     return date_str, time_str, consumed_power
+
 
 @app.post("/nlp_predict")
 def nlp_predict(nlp_input: NLPPredictionInput):
